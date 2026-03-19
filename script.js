@@ -2,7 +2,7 @@ const perguntas = [
     {
     pergunta: "Qual é a forma correta de declarar uma variável em JavaScript?",
     resposta: [
-        "var x = 10;",
+        "x = 10;",
         "variável x = 10;",
         "let x = 10;"
     ],
@@ -96,49 +96,43 @@ const template = document.querySelector("template")
 
 const corretas = new Set()
 const totalDePerguntas = perguntas.length
-//seleciona o span de acertos
+
 const mostrarTotal = document.querySelector('#acertos span')
-//muda o texto do span para o valor de perguntas corretas pelo total
 mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
 
-//repetição das perguntas
 for (let item of perguntas){
-    //seleciona o item pergunta
     const quizItem = template.content.cloneNode(true)
-    //define o texto da pergunta
     quizItem.querySelector('h3').textContent = item.pergunta
 
-    //repetição das respostas
     for (let resposta of item.resposta){
-        //seleciona o item de resposta
         const dt = quizItem.querySelector('dl dt').cloneNode(true)
-        //define o texto da resposta
+
         dt.querySelector('span').textContent = resposta
-        //coloca um atributo em cada input para selecionar um por pergunta
         dt.querySelector('input').setAttribute('name', 'pergunta' + perguntas.indexOf(item))
-        //faz os inputs aparecerem com valores diferentes
         dt.querySelector('input').value = item.resposta.indexOf(resposta)
-        //seleciona o evento de mudança
+
         dt.querySelector('input').onchange = (event)=> {
-            //diz se o valor do input clicado é igual ao valor da resposta correta
+            // impede responder mais de uma vez
+            if (item.respondida) return
+
+            item.respondida = true
+
             const estaCorreta = event.target.value == item.correta
-            //apaga o valor das respostas certas se mudar o input
-            corretas.delete(item)
-            //se estiver correto vai adicionar o acerto
+
+            // trava todas as opções da pergunta
+            const inputs = event.target.closest('.quiz-item').querySelectorAll('input')
+            inputs.forEach(input => input.disabled = true)
+
             if (estaCorreta) {
                 corretas.add(item)
             }
-            //muda o texto do span para o valor de perguntas corretas pelo total
+
             mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
         }
-        
-        //coloca as respostas na tela
+
         quizItem.querySelector('dl').appendChild(dt)
     }
-    //remove "Resposta"
-    quizItem.querySelector('dl dt').remove()
 
-    //coloca a pergunta na tela
+    quizItem.querySelector('dl dt').remove()
     quiz.appendChild(quizItem)
 }
-
