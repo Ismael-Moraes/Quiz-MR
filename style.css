@@ -14,7 +14,7 @@
 }
 
 body{
-    background-color: #0f172a;
+    background-color: #eeedea;
 }
 
 main{
@@ -26,9 +26,10 @@ main{
 header{
     align-items: center;
     display: flex;
+    justify-content: center;
     margin-top: 10px;
     padding-bottom: 24px;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid #a17a49;
 }
 
 header img{
@@ -38,7 +39,7 @@ header img{
 
 header h1{
     font-size: 30px;
-    color: #f1f5f9;
+    color: #000000;
     padding-left: 15px;
 }
 
@@ -48,24 +49,25 @@ header h1{
 
 .quiz-item{
     margin-top: 24px;
-    border: 1px solid #475569;
+    border: 1px solid #decbb1;
     border-radius: 6px;
     overflow: hidden;
 }
 
 .quiz-item h3{
     padding: 16px 20px;
-    color: #e2e8f0;
+    color: #ffffff;
     display: flex;
     align-items: center;
     gap: 12px;
-    background-color: #1e293b;
+    background-color: #a17a49;
 }
 
 .quiz-item h3::before{
     counter-increment: quiz-item;
     content: counter(quiz-item);
-    background-color: #475569;
+    background-color: #decbb1;
+    color: #a17a49;
     width: 28px;
     height: 28px;
     display: flex;
@@ -90,12 +92,12 @@ header h1{
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #e2e8f0;
+    color: #000000;
 }
 
 input{
     all: unset;
-    border: 1px solid #94a3b8;
+    border: 1px solid #decbb1;
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -106,20 +108,20 @@ input{
 }
 
 input:checked{
-    border: 1px solid #A3E635;
+    border: 1px solid #b79f84;
 }
 
 input:checked::before{
     content: "";
     width: 10px;
     height: 10px;
-    background-color: #A3E635;
+    background-color: #b79f84;
     border-radius: 50px;
 }
 
 #acertos {
     text-align: center;
-    background-color: #A3E635;
+    background-color: #b79f84;
     position: fixed;
     bottom: 0;
     left: 0;

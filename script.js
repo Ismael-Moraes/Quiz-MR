@@ -1,3 +1,10 @@
+// ================= MUSICA =================
+const audio = document.getElementById('audio')
+audio.volume = 0.4
+window.addEventListener('click', () => {
+    audio.play()
+})
+
 // ================= COOKIES =================
 function setCookie(nome, valor, dias) {
     const data = new Date()
@@ -17,70 +24,169 @@ function getCookie(nome) {
 // ================= PERGUNTAS =================
 const perguntas = [
     {
-    pergunta: "Qual é a forma correta de declarar uma variável em JavaScript?",
-    resposta: ["x = 10;", "variável x = 10;", "let x = 10;"],
-    correta: 2
+        pergunta: "Qual era o papel principal dos profetas no Antigo Testamento?",
+        resposta: [
+            "Governar Israel politicamente",
+            "Ser porta-vozes de Deus e confrontar o povo",
+            "Prever o futuro detalhadamente",
+            "Escrever leis para Israel seguir firmemente",
+            "Liderar guerras contra inimigos e seguir adiante do povo"
+        ],
+        correta: 1
     },
     {
-    pergunta: "Qual dos seguintes não é um tipo de dado primitivo em JavaScript?",
-    resposta: ["Número", "Matriz (Array)", "Booleano"],
-    correta: 1
+        pergunta: "O que caracteriza a divisão entre profetas maiores e menores?",
+        resposta: [
+            "Período histórico",
+            "Grau de proximidade com Deus",
+            "Tamanho dos livros",
+            "Quantidade de milagres realizados",
+            "Importância espiritual"
+        ],
+        correta: 2
     },
     {
-    pergunta: "O que o seguinte código imprimirá: console.log(2 + '2');?",
-    resposta: ["4", "22", "Erro de Sintaxe"],
-    correta: 1
+        pergunta: "Qual dessas NÃO é uma característica da linguagem profética apresentada?",
+        resposta: [
+            "Apelo emocional",
+            "Fala figurativa",
+            "Mensagem direta",
+            "Uso de metáforas",
+            "Linguagem política"
+        ],
+        correta: 4
     },
     {
-    pergunta: "O que o operador '===' faz em JavaScript?",
-    resposta: [
-        "Verifica a igualdade, sem conversão de tipo",
-        "Verifica a igualdade, com conversão de tipo",
-        "Atribui um valor a uma variável"
-    ],
-    correta: 0
+        pergunta: "O ciclo apresentado na mensagem central dos profetas é:",
+        resposta: [
+            "Fé → bênção → riqueza",
+            "Lei → sacrifício → perdão",
+            "Pecado → juízo → restauração",
+            "Prosperidade → guerra → vitória",
+            "Idolatria → conquista → exílio"
+        ],
+        correta: 2
     },
     {
-    pergunta: "Qual função é usada para analisar uma string e retorná-la como um número de ponto flutuante?",
-    resposta: ["parseFloat()", "parseInt()", "toFixed()"],
-    correta: 0
+        pergunta: "Após o reinado de Salomão, o que aconteceu com o reino?",
+        resposta: [
+            "Foi dominado por Babilônia",
+            "Permaneceu unido por séculos",
+            "Foi dividido em Israel e Judá",
+            "Tornou-se um império mundial",
+            "Foi destruído imediatamente"
+        ],
+        correta: 2
     },
     {
-    pergunta: "Qual é o resultado de typeof null em JavaScript?",
-    resposta: ["null", "objeto", "indefinido"],
-    correta: 1
+        pergunta: "Qual era a capital de Israel (Reino do Norte)?",
+        resposta: [
+            "Nínive",
+            "Samaria",
+            "Judá",
+            "Belém",
+            "Jerusalém"
+        ],
+        correta: 1
     },
     {
-    pergunta: "Qual é a sintaxe correta para um loop 'for' em JavaScript?",
-    resposta: [
-        "for (i <= 5; i++)",
-        "for (var i = 0; i < 5; i++)",
-        "for (i = 0; i < 5)"
-    ],
-    correta: 1
+        pergunta: "Qual profeta usou o casamento como metáfora da infidelidade de Israel?",
+        resposta: [
+            "Joel",
+            "Oséias",
+            "Miquéias",
+            "Amós",
+            "Jeremias"
+        ],
+        correta: 1
     },
     {
-    pergunta: "Qual método é usado para adicionar novos itens ao final de um array em JavaScript?",
-    resposta: ["push()", "add()", "append()"],
-    correta: 0
+        pergunta: "Qual alternativa melhor resume o problema denunciado por um dos profetas do Reino do Norte?",
+        resposta: [
+            "Falta de líderes políticos",
+            "Ausência total de religião em Israel",
+            "Dominação estrangeira direta",
+            "Prosperidade econômica acompanhada de injustiça social",
+            "Falta de conhecimento militar do povo"
+        ],
+        correta: 3
     },
     {
-    pergunta: "Para que serve a palavra-chave 'this' em JavaScript?",
-    resposta: [
-        "Para referenciar a função atual",
-        "Para referenciar o objeto global",
-        "Para referenciar o objeto ao qual ela pertence"
-    ],
-    correta: 2
+        pergunta: "Qual é o ponto central do conflito apresentado por um dos profetas antes da invasão babilônica?",
+        resposta: [
+            "A dificuldade de reconstruir o templo",
+            "A rejeição completa da fé pelo povo",
+            "O questionamento sobre como Deus permite e usa a injustiça",
+            "A revolta contra a lei de Moisés",
+            "A dúvida sobre a existência de Deus"
+        ],
+        correta: 2
     },
     {
-    pergunta: "Qual é o propósito da declaração 'break' em JavaScript?",
-    resposta: [
-        "Para encerrar um loop ou declaração switch",
-        "Para pular o restante do bloco de código",
-        "Para sair da função atual"
-    ],
-    correta: 0
+        pergunta: "Qual livro foi provavelmente escrito por Jeremias e expressa luto pela queda de Jerusalém?",
+        resposta: [
+            "Naum",
+            "Lamentações",
+            "Daniel",
+            "Isaías",
+            "Ezequiel"
+        ],
+        correta: 1
+    },
+    {
+        pergunta: "Qual profeta atuou durante o exílio babilônico e falou sobre restauração e responsabilidade individual?",
+        resposta: [
+            "Amós",
+            "Obadias",
+            "Ezequiel",
+            "Jonas",
+            "Ageu"
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "Qual profeta criticou uma religiosidade fria no período pós-exílio?",
+        resposta: [
+            "Miquéias",
+            "Naum",
+            "Joel",
+            "Malaquias",
+            "Zacarias"
+        ],
+        correta: 3
+    },
+    {
+        pergunta: "Qual profeta anunciou a queda de Nínive destacando a justiça implacável de Deus?",
+        resposta: [
+            "Naum",
+            "Jonas",
+            "Amós",
+            "Malaquias",
+            "Zacarias"
+        ],
+        correta: 0
+    },
+    {
+        pergunta: "Qual desses profetas atuou após o exílio com foco na reconstrução do templo e motivação do povo?",
+        resposta: [
+            "Isaías",
+            "Jeremias",
+            "Obadias",
+            "Ageu",
+            "Habacuque"
+        ],
+        correta: 3
+    },
+    {
+        pergunta: "Qual alternativa melhor descreve a diferença entre Jonas e Naum em relação a Nínive?",
+        resposta: [
+            "Ambos focam em Israel, não em Nínive",
+            "Ambos anunciam apenas destruição",
+            "Jonas ignora Nínive e Naum a salva",
+            "Jonas anuncia juízo e Naum anuncia restauração",
+            "Jonas anuncia misericórdia e Naum anuncia juízo"
+        ],
+        correta: 4
     }
 ]
 
